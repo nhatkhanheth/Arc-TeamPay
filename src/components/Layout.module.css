@@ -1,0 +1,198 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 11, 14, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.headerInner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.brandMark {
+  font-size: 20px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+
+.brandTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  background: rgba(0,229,160,0.1);
+  border: 1px solid rgba(0,229,160,0.2);
+  padding: 2px 7px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Right section */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Network badge */
+.networkBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  text-decoration: none;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+.networkBadge:hover { color: var(--text-2); text-decoration: none; }
+
+.networkDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-3);
+  flex-shrink: 0;
+}
+.networkDot[data-active="true"] {
+  background: var(--accent);
+  animation: pulse-glow 2s ease infinite;
+}
+
+/* Wallet button */
+.walletBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.walletBtn:hover {
+  border-color: var(--red);
+  background: rgba(255,77,109,0.05);
+}
+
+.walletBalance {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.walletAddress {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+/* Network warning */
+.networkWarning {
+  background: rgba(240,192,64,0.08);
+  border-top: 1px solid rgba(240,192,64,0.2);
+  padding: 8px 20px;
+  font-size: 12px;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ─── Main ───────────────────────────────────────────────────────────────────── */
+.main {
+  flex: 1;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 20px 100px;
+}
+
+/* ─── Bottom Nav ─────────────────────────────────────────────────────────────── */
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 11, 14, 0.95);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 12px 32px;
+  text-decoration: none;
+  color: var(--text-3);
+  transition: color var(--transition);
+  position: relative;
+}
+
+.navItem:hover { color: var(--text-2); text-decoration: none; }
+
+.navItemActive { color: var(--accent) !important; }
+
+.navItemActive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 0 0 2px 2px;
+}
+
+.navIcon { font-size: 18px; line-height: 1; }
+.navLabel { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+
+@media (max-width: 640px) {
+  .headerInner { padding: 0 14px; }
+  .networkBadge { display: none; }
+  .walletBalance { display: none; }
+  .navItem { padding: 12px 24px; }
+  .main { padding: 20px 14px 90px; }
+}
