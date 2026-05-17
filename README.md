@@ -1,6 +1,6 @@
 # ◈ TeamPay
 
-**USDC team payment tool built on [Arc Network](https://arc.io) — by [C1K](https://github.com/nhatkhanheth)**
+**USDC team payment tool built on [Arc Network](https://arc.io) — by [nhatkhanh](https://github.com/nhatkhanheth)**
 
 TeamPay lets crypto research teams send USDC payments to teammates directly on-chain, using Arc Testnet's sub-second finality and near-zero gas fees denominated in USDC itself.
 
